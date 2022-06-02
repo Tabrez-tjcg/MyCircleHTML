@@ -95,7 +95,7 @@ body{
 }
 .nav-list{
     position: absolute;
-    top: 7vw;
+    top: 6.2vw;
     list-style: none;
     width: 100%;
     padding: 0 13vw;
@@ -118,7 +118,7 @@ body{
     height: 3vw;
     width: 15vw;
     text-align: center;
-    padding-top: 0.26vw;
+    padding-top: 0.3vw;
 }
 .nav-item img{
     width: 2.5vw;
@@ -157,22 +157,29 @@ body{
 
 #icon-1::after{
     content: '';
-    width: 17vw;
+    /* width: 17vw;
     height: 8vw;
     background-image: url('./assets/icons/line.svg');
     background-repeat: no-repeat;
-    background-size: 12vw;
+    background-size: 12vw; */
     position: absolute;
     top:4vw;
-    transform: translateX(8vw);
+    left:5vw;
     z-index: -3;
+    height: 5vw;
+    width: 11vw;
+    border-top: 0.25vw solid var(--clr2);
+    border-right: 0.25vw solid  var(--clr2);
+    -moz-transform: skew(30deg);
+    -webkit-transform: skew(30deg);
+    transform: translateX(28vw) translateY(-0.5vw) skew(30deg);
 }
 
 #icon-2::after{
     content: '';
     width: 15vw;
-    height: 0.3vw;
-    background-color: #17cbda;
+    height: 0.2vw;
+    background-color: var(--clr2);
     position: absolute;
     top:11vw;
     transform: translateX(9vw);
@@ -182,8 +189,8 @@ body{
 #icon-3::after{
     content: '';
     width: 15vw;
-    height: 0.3vw;
-    background-color: #17cbda;
+    height: 0.25vw;
+    background-color: var(--clr2);
     position: absolute;
     top:19vw;
     transform: translateX(9vw);
@@ -192,37 +199,52 @@ body{
 
 #icon-4::after{
     content: '';
-    width: 17vw;
+    /* width: 17vw;
     height: 8vw;
     background-image: url('./assets/icons/line.svg');
     background-repeat: no-repeat;
-    background-size: 12vw;
+    background-size: 12vw; */
     position: absolute;
     top:19vw;
     transform: translateX(10vw);
-    -webkit-transform: translateX(10vw) rotate(180deg) scaleX(-1);
+    /* -webkit-transform: translateX(10vw) rotate(180deg) scaleX(-1); */
     z-index: -3;
+    height: 5vw;
+    width: 11vw;
+    border-bottom: 0.25vw solid var(--clr2);
+    border-right: 0.25vw solid  var(--clr2);
+    -moz-transform: skew(-30deg);
+    -webkit-transform: skew(-30deg);
+    transform: translateX(7.5vw) translateY(3vw) skew(-30deg);
+
 }
 
 
 #icon-5::after{
     content: '';
-    width: 17vw;
+    /* width: 17vw;
     height: 8vw;
     background-image: url('./assets/icons/line.svg');
     background-repeat: no-repeat;
-    background-size: 12vw;
+    background-size: 12vw; */
     position: absolute;
-    top:5vw;
-    -webkit-transform: translateX(-10vw) rotate(180deg) scaleY(-1) scaleX(1);
+    top:7vw;
+    /* -webkit-transform: translateX(-10vw) rotate(180deg) scaleY(-1) scaleX(1); */
     z-index: -3;
+    height: 5vw;
+    width: 10vw;
+    border-top: 0.25vw solid var(--clr2);
+    border-left: 0.25vw solid  var(--clr2);
+    -moz-transform: skew(-30deg);
+    -webkit-transform: skew(-30deg);
+    transform: translate(-6vw) skew(-30deg);
 }
 
 #icon-6::after{
     content: '';
     width: 15vw;
-    height: 0.3vw;
-    background-color: #17cbda;
+    height: 0.2vw;
+    background-color: var(--clr2);
     position: absolute;
     top:15vw;
     transform: translateX(-8vw);
@@ -230,17 +252,27 @@ body{
 }
 
 
+.shape {
+    
+  }
 #icon-7::after{
     content: '';
-    width: 17vw;
+    /* width: 17vw;
     height: 8vw;
     background-image: url('./assets/icons/line.svg');
     background-repeat: no-repeat;
-    background-size: 12vw;
+    background-size: 12vw; */
     position: absolute;
     top:15vw;
-    -webkit-transform: translateX(-9vw) scaleY(-1) scaleX(-1);
+    /* -webkit-transform: translateX(-9vw) scaleY(-1) scaleX(-1); */
     z-index: -3;
+    height: 5vw;
+    width: 10vw;
+    border-bottom: 0.25vw solid var(--clr2);
+    border-left: 0.25vw solid  var(--clr2);
+    -moz-transform: skew(30deg);
+    -webkit-transform: skew(30deg);
+    transform: translateX(-6vw) translateY(2.8vw) skew(30deg);
 }
 
 
@@ -356,7 +388,7 @@ body{
         height: 10vw;
         width: 60vw;
         text-align: center;
-        padding-top: 0.26vw;
+        padding-top: 0.3vw;
     }
     .nav-item img{
         width: 2.5vw;
