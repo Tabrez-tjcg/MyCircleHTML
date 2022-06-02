@@ -502,3 +502,249 @@ body{
         margin-top: 3vw;
     }
 }
+
+
+/* Login Page Styling */
+
+header.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 3vw;
+}
+
+.login .header-logo {
+    min-width: 13vw;
+}
+
+.login.content-textual .title{
+    font-size: 2.5vw;
+    padding: 0.1vw;
+}
+.login.content-textual .sub-title{
+    font-size: 1.2vw;
+    color: #858585;
+}
+
+.login-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin-top: 2vw;
+}
+
+[for="exampleInputEmail1"], [for="exampleInputPassword1"]{
+    font-size: 1.1vw;
+}
+
+[type="email"], [type="password"]{
+    border-radius: 1.1vw;
+    min-height: 3.5vw;
+    border: 0.15vw solid var(--clr2);
+    padding-left: 3vw;
+}
+
+#emailHelp{
+    display: none;
+}
+
+.form-check-label{
+    font-size: 1.2vw;
+}
+
+[type="submit"]{
+    margin-top: 2vw;
+}
+
+form{
+    width: 30vw;
+}
+.btn-primary{
+    background-color: var(--clr2);
+    border-color: var(--clr2);
+}
+.btn-primary:hover{
+    background-color: var(--clr1);
+    border-color: var(--clr1);
+}
+
+.forgot-password a, .signup a, .links a{
+    color: var(--clr2);
+    text-decoration: none;
+}
+
+.forgot-password a:hover, .signup a:hover, .links a:hover{
+    color: var(--clr1);
+    transition: all 0.3s ease-in-out 0s;
+}
+.links{
+    margin-top: 5vw;
+    padding-bottom: 2vw;
+    text-align: center;
+}
+.links a{
+    color: #858585;
+}
+.links a:hover{
+    color: var(--clr1);
+}
+.w-70{
+    width: 100vw;
+}
+.links{
+    width: 40vw;
+}
+
+.checkbox {
+    background-color: #921919;
+}
+input::placeholder {
+    font-size: 1.5vw;
+}
+
+@media screen and (max-width: 920px){
+    form{
+        width: 80vw;
+    }
+
+    [type="email"], [type="password"] {
+        padding-left: 10vw;
+    }
+
+    header.login{
+        padding-top: 18vw;
+    }
+    [for="exampleInputEmail1"], [for="exampleInputPassword1"] {
+        font-size: 5vw;
+    }
+
+    [type="email"], [type="password"]{
+        min-height: auto;
+        padding-top: 7vw;
+        padding-bottom: 7vw;
+        border-radius:  3.2vw;
+    }
+    .form-check-label, .forgot-password a{
+        font-size: 4vw;
+    }
+    
+    .signup {
+        font-size: 3.5vw;
+    }
+    .links{
+        font-size: 2vw;
+        width: 80vw;
+        margin-top: 8vw;
+    }
+    .login.content-textual .sub-title {
+        display: block;
+    }
+    .login.content-textual .title {
+        font-size: 6.5vw;
+    }
+    .login.content-textual .sub-title{
+        font-size: 3.5vw;
+    }
+    .links {
+        font-size: 4vw;
+        flex-wrap: wrap;
+    }
+    .links > a {
+        margin: 0 auto;
+    }
+    .links a{
+        margin-top: 1vw;
+        margin-bottom: 1vw;
+    }
+    input::placeholder {
+        font-size: 5vw;
+    }
+}
+
+
+@media  (width: 820px) and (height: 1180px) {
+
+    header.login {
+        padding-top: 9vw;
+    }
+    .content-textual {
+        margin-top: 0vw;
+    }
+    input::placeholder {
+        font-size: 5vw;
+    }
+    [type="submit"]{
+        font-size: 5vw;
+    }
+}
+
+
+@media  (width: 768px) and (height: 1024px) {
+
+    header.login {
+        padding-top: 4vw;
+    }
+    .content-textual {
+        margin-top: 0vw;
+    }
+    input::placeholder {
+        font-size: 5vw;
+    }
+    .links {
+        margin-top: 5vw;
+    }
+    .checkbox{
+        width: 5vw;
+        height: 5vw;
+    }
+    [type="submit"]{
+        font-size: 5vw;
+    }
+}
+
+@media (width: 540px) and (height: 720px) {
+    header.login {
+        padding-top: 3vw;
+    }
+    [type="submit"]{
+        font-size: 5vw;
+    }
+    .content-textual {
+        margin-top: 0vw;
+    }
+    .links {
+        font-size: 2.5vw;
+        margin-top: 4vw;
+    }
+}
+
+@media (width:912px) and (height:1368px) {
+    [type="submit"]{
+        font-size: 4vw;
+    }
+    header.login {
+        padding-top: 7vw;
+    }
+}
+
+@media (width:1024px) and (height: 600px) ,
+(width:1280px) and (height: 800px){
+    .login .header-logo {
+        min-width: 100%;
+    }
+    .content-textual {
+        margin-top: 0vw;
+    }
+}
+
+@media (width:1280px) and (height: 800px){
+    .login{
+        margin-top: 5vw;
+    }
+    .content-textual {
+        margin-top: 0vw;
+    }
+}
