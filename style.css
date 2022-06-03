@@ -539,8 +539,7 @@ header.login{
 [for="exampleInputEmail1"], [for="exampleInputPassword1"]{
     font-size: 1.1vw;
 }
-
-[type="email"], [type="password"]{
+.form-control{
     border-radius: 1.1vw;
     min-height: 3.5vw;
     border: 0.15vw solid var(--clr2);
@@ -559,7 +558,7 @@ header.login{
     margin-top: 2vw;
 }
 
-form{
+.login-form form, .signup-for form{
     width: 30vw;
 }
 .btn-primary{
@@ -571,18 +570,18 @@ form{
     border-color: var(--clr1);
 }
 
-.forgot-password a, .signup a, .links a{
+.forgot-password a, .signup-btn a, .signin-btn a, .links a{
     color: var(--clr2);
     text-decoration: none;
 }
 
-.forgot-password a:hover, .signup a:hover, .links a:hover{
-    color: var(--clr1);
+.forgot-password a:hover, .signup-btn a:hover, .signin-btn a:hover, .links a:hover{
+    color: var(--clr1); 
     transition: all 0.3s ease-in-out 0s;
 }
 .links{
-    margin-top: 5vw;
-    padding-bottom: 2vw;
+    margin-top: 3vw;
+    padding-bottom: 1vw;
     text-align: center;
 }
 .links a{
@@ -605,6 +604,11 @@ input::placeholder {
     font-size: 1.5vw;
 }
 
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: var(--clr1);
+    border: 1px solid var(--clr1);
+  }
+
 @media screen and (max-width: 920px){
     form{
         width: 80vw;
@@ -615,7 +619,7 @@ input::placeholder {
     }
 
     header.login{
-        padding-top: 18vw;
+        /* padding-top: 18vw; */
     }
     [for="exampleInputEmail1"], [for="exampleInputPassword1"] {
         font-size: 5vw;
@@ -631,7 +635,7 @@ input::placeholder {
         font-size: 4vw;
     }
     
-    .signup {
+    .signup-btn, .signin-btn {
         font-size: 3.5vw;
     }
     .links{
@@ -733,7 +737,7 @@ input::placeholder {
 @media (width:1024px) and (height: 600px) ,
 (width:1280px) and (height: 800px){
     .login .header-logo {
-        min-width: 100%;
+        min-width: 20vw;
     }
     .content-textual {
         margin-top: 0vw;
@@ -741,10 +745,101 @@ input::placeholder {
 }
 
 @media (width:1280px) and (height: 800px){
-    .login{
-        margin-top: 5vw;
-    }
     .content-textual {
         margin-top: 0vw;
+    }
+}
+
+.signin, .signup{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
+}
+
+.login.py-2 .header-logo {
+    min-width: 30vw;
+}
+
+
+/*  OTP Page */
+
+
+form.otp-form{
+    width: auto;
+}
+.digit-group input{
+    width: 3.5vw;
+    height: 3.5vw;
+    background-color: lighten(red, 5%);
+    border: none;
+    border-bottom: 0.12vw solid #858585;
+    text-align: center;
+    font-size: 2vw;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    color: #000000;
+    margin: 0 2vw;
+}
+.digit-group input:focus, .digit-group input:focus-visible {
+    outline: none;
+    border: none;
+    border-bottom: 0.15vw solid var(--clr1);
+}
+
+.dialpad
+{
+    margin-top: 2vw;
+}
+
+.dialpad button{
+    border: 0.2vw solid var(--clr2);
+    border-radius: 50%;
+    margin: 0.2vw 0.5vw;
+    font-size: 2vw;
+    width: 4vw;
+    height: auto;
+    aspect-ratio: 1/1;
+}
+
+.btn-icons {
+    max-width: 1vw;
+}
+
+.close-btn-icon{
+    max-width: 1vw;
+}
+.back-btn-icon{
+    max-width: 0.6vw;
+}
+
+.btn-circular{
+    padding-top: 0;
+}
+.otp-page-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 1vw;
+}
+
+.signinbtn{
+    font-size: 1.2vw;
+}
+
+@media (max-width: 900px) {
+    .dialpad button {
+        border: 0.2vw solid var(--clr2);
+        border-radius: 50%;
+        margin: 0.2vw 0.5vw;
+        font-size: 6vw;
+        width: 13vw;
+        height: auto;
+        aspect-ratio: 1/1;
+    }
+    .signinbtn{
+        font-size: 4vw;
     }
 }

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/vendor/bootstrap-4.6.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>MyCircle | OTP</title>
+</head>
+<body>
+    <div class="signin pt-0">
+    <header class="otp-page-header py-2">
+        <div class="header-logo d-flex justify-content-center align-items-center">
+            <img class="img-fluid" src="./assets/icons/logo.svg" alt="header-logo">
+        </div> 
+    </header>
+    <div class="content-textual login d-flex flex-column align-items-center">
+        <h2 class="title">
+            Enter your 4 digit pin
+        </h2>
+        <p class="sub-title">
+            Login now to get the latest insights
+        </p>
+    </div>
+
+    <div class="otp-page-form d-flex flex-column justify-content-center align-items-center">
+
+    <div>
+      <form method="get" class="digit-group otp-form mt-0" data-group-name="digits" data-autosubmit="false" autocomplete="off">
+        <input type="text" pattern = "[0-9]" id="digit-1" name="digit-1" maxLength="1" data-next="digit-2" />
+        <input type="text" pattern = "[0-9]" id="digit-2" name="digit-2" maxLength="1" data-next="digit-3" data-previous="digit-1" />
+        <input type="text" pattern = "[0-9]" id="digit-3" name="digit-3" maxLength="1" data-next="digit-4" data-previous="digit-2" />
+        <input type="text" pattern = "[0-9]" id="digit-4" name="digit-4" maxLength="1"  data-previous="digit-3" />
+      </form>
+    </div>
+
+    <div class="w-30">
+    <div class="dialpad">
+        <div class="d-flex justify-content-between align-items-center">
+            <button class="btn btn-circular dialPadBtn" value="1" onclick="setInput(1)">1</button>
+            <button class="btn btn-circular dialPadBtn" value="2" onclick="setInput(2)">2</button>
+            <button class="btn btn-circular dialPadBtn" value="3" onclick="setInput(3)">3</button>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+            <button class="btn btn-circular dialPadBtn" value="4" onclick="setInput(4)">4</button>
+            <button class="btn btn-circular dialPadBtn" value="5" onclick="setInput(5)">5</button>
+            <button class="btn btn-circular dialPadBtn" value="6" onclick="setInput(6)">6</button>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+            <button class="btn btn-circular dialPadBtn" value="7" onclick="setInput(7)">7</button>
+            <button class="btn btn-circular dialPadBtn" value="8" onclick="setInput(8)">8</button>
+            <button class="btn btn-circular dialPadBtn" value="9" onclick="setInput(9)">9</button>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+            <button class="btn btn-circular dialPadBtn"><img class="close-btn-icon" src="./assets/icons/close.svg" alt="closeb btn"></button>
+            <button class="btn btn-circular dialPadBtn" value="0" onclick="setInput(0)">0</button>
+            <button class="btn btn-circular dialPadBtn"><img class="back-btn-icon" src="./assets/icons/back.svg" alt="back btn"></button>
+         </div>
+    </div>
+    <div class="w-100">
+        <button type="submit" class="btn btn-primary signinbtn w-100 mt-3">Sign In</button>
+            <div class="signin-btn text-center mt-2">
+                <a href="#">forgot password?</a>
+            </div>
+    </div>
+    </div>
+
+
+    
+
+    <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-between align-content-center links">
+            <a href="">2022 Mycircle. All Rights Reserved</a>
+            <a href="">Terms of Service</a>
+            <a href="">Privacy Policy</a>
+        </div>
+    </div>
+    </div>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <script>
+
+        function setInput(num) {
+            document.getElementById(`digit-${num}`).value = num;
+        }
+
+        $('.digit-group').find('input').each(function() {
+            $(this).attr('maxlength', 1);
+            $(this).on('keyup', function(e) {
+                var parent = $($(this).parent());
+                console.log(parent);
+                if(e.keyCode === 8 || e.keyCode === 37) {
+                    var prev = parent.find('input#' + $(this).data('previous'));
+                    
+                    if(prev.length) {
+                        $(prev).select();
+                    }
+                } else if((e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 65 && e.keyCode <= 90) || (e.keyCode >= 96 && e.keyCode <= 105) || e.keyCode === 39) {
+                    var next = parent.find('input#' + $(this).data('next'));
+                    
+                    if(next.length) {
+                        $(next).select();
+                    } else {
+                        if(parent.data('autosubmit')) {
+                            parent.submit();
+                        }
+                    }
+                }
+            });
+        });
+       
+    </script>
+    
+    <script src="./assets/vendor/bootstrap-4.6.1-dist/js/bootstrap.min.js"></script>
+    <script src="./assets/vendor/bootstrap-4.6.1-dist/js/bootstrap.min.js.map"></script>
+</body>
+</html>
