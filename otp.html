@@ -39,24 +39,24 @@
     <div class="w-30">
     <div class="dialpad">
         <div class="d-flex justify-content-between align-items-center">
-            <button class="btn btn-circular dialPadBtn" value="1" onclick="setInput(1)">1</button>
-            <button class="btn btn-circular dialPadBtn" value="2" onclick="setInput(2)">2</button>
-            <button class="btn btn-circular dialPadBtn" value="3" onclick="setInput(3)">3</button>
+            <button class="btn btn-circular dialPadBtn" value="1">1</button>
+            <button class="btn btn-circular dialPadBtn" value="2">2</button>
+            <button class="btn btn-circular dialPadBtn" value="3">3</button>
         </div>
         <div class="d-flex justify-content-between align-items-center">
-            <button class="btn btn-circular dialPadBtn" value="4" onclick="setInput(4)">4</button>
-            <button class="btn btn-circular dialPadBtn" value="5" onclick="setInput(5)">5</button>
-            <button class="btn btn-circular dialPadBtn" value="6" onclick="setInput(6)">6</button>
+            <button class="btn btn-circular dialPadBtn" value="4">4</button>
+            <button class="btn btn-circular dialPadBtn" value="5">5</button>
+            <button class="btn btn-circular dialPadBtn" value="6">6</button>
         </div>
         <div class="d-flex justify-content-between align-items-center">
-            <button class="btn btn-circular dialPadBtn" value="7" onclick="setInput(7)">7</button>
-            <button class="btn btn-circular dialPadBtn" value="8" onclick="setInput(8)">8</button>
-            <button class="btn btn-circular dialPadBtn" value="9" onclick="setInput(9)">9</button>
+            <button class="btn btn-circular dialPadBtn" value="7">7</button>
+            <button class="btn btn-circular dialPadBtn" value="8">8</button>
+            <button class="btn btn-circular dialPadBtn" value="9">9</button>
         </div>
         <div class="d-flex justify-content-between align-items-center">
-            <button class="btn btn-circular dialPadBtn"><img class="close-btn-icon" src="./assets/icons/close.svg" alt="closeb btn"></button>
-            <button class="btn btn-circular dialPadBtn" value="0" onclick="setInput(0)">0</button>
-            <button class="btn btn-circular dialPadBtn"><img class="back-btn-icon" src="./assets/icons/back.svg" alt="back btn"></button>
+            <button class="btn btn-circular dialPadBtn clear-btn"><img class="close-btn-icon" src="./assets/icons/close.svg" alt="closeb btn"></button>
+            <button class="btn btn-circular dialPadBtn" value="0">0</button>
+            <button class="btn btn-circular dialPadBtn back-button"><img class="back-btn-icon" src="./assets/icons/back.svg" alt="back btn"></button>
          </div>
     </div>
     <div class="w-100">
@@ -83,30 +83,44 @@
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
     crossorigin="anonymous"></script>
     <script>
-
-        var focused = null;
-        $(".otp-text").focus(function () {
-            focused = $(this);
+        $(document).on('ready',function(){
+            $('#digit-1').focus();
+        })
+        $('.dialPadBtn').on('click',function(){
+            if($('#digit-1').val() == ""){
+                $('#digit-1').val($(this).val());
+            }
+            else if($('#digit-2').val() == ""){
+                $('#digit-2').val($(this).val());
+            }
+            else if($('#digit-3').val() == ""){
+                $('#digit-3').val($(this).val());
+            }
+            else if($('#digit-4').val() == ""){
+                $('#digit-4').val($(this).val());
+            }
         });
-
-        //focus next
-        function focusNext() {
-            if (focused && focused.length) {
-                focused.next('.otp-text').focus();
+        $('.back-button').on('click',function(){
+            console.log($('#digit-4').val());
+            if($('#digit-4').val() != ""){
+                $('#digit-4').val('');
             }
-        }
-
-        //focus prev
-        function focusPrev() {
-            if (focused && focused.length) {
-                focused.prev('.otp-text').focus();
+            else if($('#digit-3').val() != ""){
+                $('#digit-3').val('');
             }
-        }
+            else if($('#digit-2').val() != ""){
+                $('#digit-2').val('');
+            }
+            else if($('#digit-1').val() != ""){
+                $('#digit-1').val('');
+            }
+        });
+        $('.clear-btn').on('click',function(){
+            $('.otp-text').val('');
+        });
+  
 
 
-        function setInput(num) {
-            document.getElementById(`digit-${num}`).value = num;
-        }
 
         $('.digit-group').find('input').each(function() {
             $(this).attr('maxlength', 1);
@@ -136,6 +150,6 @@
     </script>
     
     <script src="./assets/vendor/bootstrap-4.6.1-dist/js/bootstrap.min.js"></script>
-    <script src="./assets/vendor/bootstrap-4.6.1-dist/js/bootstrap.min.js.map"></script>
+    <!-- <script src="./assets/vendor/bootstrap-4.6.1-dist/js/bootstrap.min.js.map"></script> -->
 </body>
 </html>
