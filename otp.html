@@ -27,12 +27,12 @@
 
     <div class="otp-page-form d-flex flex-column justify-content-center align-items-center">
 
-    <div>
+    <div class="w-30">
       <form method="get" class="digit-group otp-form mt-0" data-group-name="digits" data-autosubmit="false" autocomplete="off">
-        <input type="text" pattern = "[0-9]" id="digit-1" name="digit-1" maxLength="1" data-next="digit-2" />
-        <input type="text" pattern = "[0-9]" id="digit-2" name="digit-2" maxLength="1" data-next="digit-3" data-previous="digit-1" />
-        <input type="text" pattern = "[0-9]" id="digit-3" name="digit-3" maxLength="1" data-next="digit-4" data-previous="digit-2" />
-        <input type="text" pattern = "[0-9]" id="digit-4" name="digit-4" maxLength="1"  data-previous="digit-3" />
+        <input type="text" class="otp-text" pattern = "[0-9]" id="digit-1" name="digit-1" maxLength="1" data-next="digit-2" />
+        <input type="text" class="otp-text" pattern = "[0-9]" id="digit-2" name="digit-2" maxLength="1" data-next="digit-3" data-previous="digit-1" />
+        <input type="text" class="otp-text" pattern = "[0-9]" id="digit-3" name="digit-3" maxLength="1" data-next="digit-4" data-previous="digit-2" />
+        <input type="text" class="otp-text" pattern = "[0-9]" id="digit-4" name="digit-4" maxLength="1"  data-previous="digit-3" />
       </form>
     </div>
 
@@ -83,6 +83,26 @@
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
     crossorigin="anonymous"></script>
     <script>
+
+        var focused = null;
+        $(".otp-text").focus(function () {
+            focused = $(this);
+        });
+
+        //focus next
+        function focusNext() {
+            if (focused && focused.length) {
+                focused.next('.otp-text').focus();
+            }
+        }
+
+        //focus prev
+        function focusPrev() {
+            if (focused && focused.length) {
+                focused.prev('.otp-text').focus();
+            }
+        }
+
 
         function setInput(num) {
             document.getElementById(`digit-${num}`).value = num;

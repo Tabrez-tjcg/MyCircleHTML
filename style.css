@@ -251,10 +251,6 @@ body{
     z-index: -3;
 }
 
-
-.shape {
-    
-  }
 #icon-7::after{
     content: '';
     /* width: 17vw;
@@ -275,6 +271,18 @@ body{
     transform: translateX(-6vw) translateY(2.8vw) skew(30deg);
 }
 
+
+.signin, .signup{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
+}
+
+.login.py-2 .header-logo {
+    min-width: 30vw;
+}
 
 
 /* responsive */
@@ -307,7 +315,7 @@ body{
         max-width: 10vw;
     }
     .content-textual{
-        padding: 2vw;
+        padding: 0 2vw;
         margin-top: 5vw;
     }
     .content-textual .title{
@@ -521,10 +529,12 @@ header.login{
 .login.content-textual .title{
     font-size: 2.5vw;
     padding: 0.1vw;
+    letter-spacing: 0.1vw;
 }
 .login.content-textual .sub-title{
     font-size: 1.2vw;
     color: #858585;
+    letter-spacing: 0.1vw;
 }
 
 .login-form{
@@ -590,6 +600,10 @@ header.login{
 .links a:hover{
     color: var(--clr1);
 }
+
+.signup-form+ div > .links{
+    margin-top: 1.2vw; 
+}
 .w-70{
     width: 100vw;
 }
@@ -601,31 +615,33 @@ header.login{
     background-color: #921919;
 }
 input::placeholder {
-    font-size: 1.5vw;
+    font-size: 1.2vw;
 }
 
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
     background-color: var(--clr1);
     border: 1px solid var(--clr1);
-  }
-
+}
+.signup-form .btn, .signin .btn{
+    font-size: 1.2vw;
+}
 @media screen and (max-width: 920px){
     form{
         width: 80vw;
     }
 
-    [type="email"], [type="password"] {
+    .form-control {
         padding-left: 10vw;
     }
-
+    
     header.login{
         /* padding-top: 18vw; */
     }
-    [for="exampleInputEmail1"], [for="exampleInputPassword1"] {
+    .form-group label {
         font-size: 5vw;
     }
 
-    [type="email"], [type="password"]{
+    input{
         min-height: auto;
         padding-top: 7vw;
         padding-bottom: 7vw;
@@ -666,6 +682,23 @@ input::placeholder {
     input::placeholder {
         font-size: 5vw;
     }
+    .signup-form .btn, .signin .btn {
+        font-size: 4vw;
+    }
+    .login.py-2 .header-logo {
+        min-width: 70vw;
+    }
+    .form-control {
+        padding-left: 7vw;
+    }
+    .form-control {
+        min-height: 10.5vw;
+        border-radius: 3vw;
+    }
+    .login-form form, .signup-for form {
+        width: 100%;
+    }
+    
 }
 
 
@@ -709,6 +742,13 @@ input::placeholder {
     }
 }
 
+@media (min-width: 390px) and (max-height: 900px) {
+    .signup-form+ div > .links {
+        margin-top: 2.5vw;
+    }
+}
+
+
 @media (width: 540px) and (height: 720px) {
     header.login {
         padding-top: 3vw;
@@ -723,14 +763,88 @@ input::placeholder {
         font-size: 2.5vw;
         margin-top: 4vw;
     }
+    .login.content-textual .title {
+        font-size: 3.5vw;
+    }
+    .login.content-textual .sub-title {
+        font-size: 3vw;
+    }
+    .login.py-2 .header-logo {
+        min-width: 30vw;
+    }
+    .form-check-label, .forgot-password a {
+        font-size: 3vw;
+    }
+    .form-group label {
+        font-size: 3.5vw;
+    }
+    .form-group label {
+        font-size: 3vw;
+    }
+    .signup-form+ div > .links {
+        margin-top: 1vw;
+    }
 }
 
-@media (width:912px) and (height:1368px) {
+@media (width: 412px) and (height: 915px),
+(width: 412px) and (height: 914px)  {
+    .signup-form+ div > .links {
+        margin-top: 5vw;
+    }
+    .content-textual {
+        padding: 4vw 2vw;
+        margin-top: 5vw;
+    }
+}
+
+@media (width: 375px) and (height: 667px) {
+    .login.py-2 .header-logo {
+        min-width: 30vw;
+    }
+}
+
+@media (width:912px) and (height:1368px),
+(width: 768px) and (height: 1024px),
+(width:  820px) and (height: 1180px){
     [type="submit"]{
         font-size: 4vw;
     }
     header.login {
         padding-top: 7vw;
+    }
+    .form-group label {
+        font-size: 4vw;
+    }
+    .form-check-label, .forgot-password a {
+        font-size: 3.5vw;
+    }
+    .img-fluid {
+        min-width: 50vw;
+        height: auto;
+    }
+    .content-textual {
+        padding: 2vw 2vw;
+    }
+    .login.content-textual .title {
+        font-size: 5vw;
+    }
+    .login.content-textual .sub-title {
+        font-size: 3.5vw;
+    }
+    .signup-form+ div > .links {
+        margin-top: 3.2vw;
+    }
+    .signup-form+ div > .links {
+        margin-top: 3.2vw;
+    }
+    .signup-form+ div > .links > div{
+        margin-top: 3.2vw;
+    }
+    .links > a:first-child{
+        width: 100%;
+    }
+    .links {
+        font-size: 3.5vw;
     }
 }
 
@@ -740,7 +854,7 @@ input::placeholder {
         min-width: 20vw;
     }
     .content-textual {
-        margin-top: 0vw;
+        width: 100%;
     }
 }
 
@@ -750,17 +864,6 @@ input::placeholder {
     }
 }
 
-.signin, .signup{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translateY(-50%) translateX(-50%);
-    transform: translateY(-50%) translateX(-50%);
-}
-
-.login.py-2 .header-logo {
-    min-width: 30vw;
-}
 
 
 /*  OTP Page */
@@ -769,9 +872,14 @@ input::placeholder {
 form.otp-form{
     width: auto;
 }
+/* .otp-page-form  > div:first-child {
+    width: 100%;
+    text-align: center;
+} */
+
 .digit-group input{
-    width: 3.5vw;
-    height: 3.5vw;
+    width: 3.2vw;
+    height: 3.2vw;
     background-color: lighten(red, 5%);
     border: none;
     border-bottom: 0.12vw solid #858585;
@@ -780,7 +888,7 @@ form.otp-form{
     font-family: 'Raleway', sans-serif;
     font-weight: 200;
     color: #000000;
-    margin: 0 2vw;
+    margin: 0 0.2vw;
 }
 .digit-group input:focus, .digit-group input:focus-visible {
     outline: none;
@@ -790,7 +898,7 @@ form.otp-form{
 
 .dialpad
 {
-    margin-top: 2vw;
+    margin-top: 1.5vw;
 }
 
 .dialpad button{
@@ -801,7 +909,10 @@ form.otp-form{
     width: 4vw;
     height: auto;
     aspect-ratio: 1/1;
+    min-width: fit-content;
+    padding: 0 1.5vw;
 }
+
 
 .btn-icons {
     max-width: 1vw;
@@ -816,6 +927,7 @@ form.otp-form{
 
 .btn-circular{
     padding-top: 0;
+    font-size: 1.5vw !important;
 }
 .otp-page-header{
     display: flex;
@@ -827,6 +939,12 @@ form.otp-form{
 
 .signinbtn{
     font-size: 1.2vw;
+}
+
+.otp-page-form .links {
+    margin-top: 2vw;
+    padding-bottom: 1vw;
+    text-align: center;
 }
 
 @media (max-width: 900px) {
@@ -842,4 +960,114 @@ form.otp-form{
     .signinbtn{
         font-size: 4vw;
     }
+    .btn-circular {
+        font-size: 4.5vw !important;
+    }
+    .back-btn-icon {
+        max-width: 1.6vw;
+    }
+    .close-btn-icon {
+        max-width: 2.5vw;
+    }
+    .otp-form input {
+        width: 9.5vw;
+        border-radius: 0;
+        height: auto;
+        font-size: 5vw;
+        min-height: auto;
+        padding-top: 4vw;
+        padding-bottom: 2vw;
+    }
+}
+
+@media (width: 768px) and (height: 1024px) {
+    .otp-form input {
+        padding-top: 0vw;
+    }
+}
+
+
+@media (width: 820px) and (height: 1180px),
+(width: 540px) and (height: 720px)
+ {
+    .dialpad {
+        padding-top: 2vw;
+    }
+    .dialpad button {
+        margin: 0.8vw 0.8vw;
+    }
+}
+
+@media (width: 375px) and (height: 667px),
+(width: 414px) and (height: 896px),
+(width: 390px) and (height: 844px),
+(width: 393px) and (height: 851px),
+(width: 360px) and (height: 740px),
+(width: 412px) and (height: 915px) {
+    .otp-page-header .header-logo {
+        max-width: 60vw;
+    }   
+    .otp-form{
+        margin-top: 5vw !important;
+    }
+    .otp-form input {
+        margin-bottom: 4vw;
+    }
+    .otp-page-form .links {
+        margin-top: 8vw;
+    }
+
+    .dialpad{
+        margin-bottom: 2vw;
+    }
+}
+
+@media (width: 768px) and (height: 1024px){
+    .otp-page-header .header-logo .img-fluid {
+        min-width: 30vw;
+    }   
+
+    .dialpad button {
+        border: 0.2vw solid var(--clr2);
+        border-radius: 50%;
+        margin: 0.2vw 0.5vw;
+        font-size: 6vw;
+        width: 13vw;
+        height: auto;
+        aspect-ratio: 1/1;
+        margin: 1vw;
+    }
+    .otp-page-header + .content-textual {
+        padding: 0vw 2vw;
+    }
+}
+
+@media (width: 912px) and (height: 1368px){
+    .otp-form input {
+        padding-top: 2vw;
+        padding-bottom: 1vw;
+        border-radius: 0;
+    }
+
+    .digit-group input {
+        width: 8.2vw;
+    }
+
+    .dialpad button {
+        border: 0.2vw solid var(--clr2);
+        border-radius: 50%;
+        margin: 0.8vw 0.8vw;
+        font-size: 5vw !important;
+        width: 11vw;
+        height: auto;
+        aspect-ratio: 1/1;
+    }
+
+    .close-btn-icon {
+        max-width: 3.8vw;
+    }
+    .back-btn-icon {
+        max-width: 2.6vw;
+    }
+
 }
